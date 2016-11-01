@@ -26,9 +26,10 @@ def run_train(dataset, hps, logdir, ps_device, task=0, master=""):
     sv = tf.train.Supervisor(is_chief=(task == 0),
                              logdir=logdir,
                              summary_op=None,  # Automatic summaries don't work with placeholders.
+                             saver=tf.train.Saver(max_to_keep=None),
                              global_step=model.global_step,
                              save_summaries_secs=30,
-                             save_model_secs=120 * 5)
+                             save_model_secs=3600*5)
 
     config = tf.ConfigProto(allow_soft_placement=True,
                             intra_op_parallelism_threads=2,
