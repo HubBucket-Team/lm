@@ -20,7 +20,7 @@ def main(_):
     hps = LM.get_default_hparams().parse(FLAGS.hpconfig)
     hps.num_gpus = FLAGS.num_gpus
 
-    vocab = Vocabulary.from_file("1b_word_vocab.txt")
+    vocab = Vocabulary.from_file("1b_word_vocab_50k.txt")
 
     if FLAGS.mode == "train":
         hps.batch_size = 256
