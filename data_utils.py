@@ -22,7 +22,7 @@ class Vocabulary(object):
 
     @property
     def unk(self):
-        return "<UNK>"
+        return "<unk>"
 
     @property
     def unk_id(self):

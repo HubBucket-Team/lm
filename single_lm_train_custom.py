@@ -24,7 +24,7 @@ def main(_):
 
     if FLAGS.mode == "train":
         hps.batch_size = 256
-        dataset = Dataset(vocab, FLAGS.datadir + "/training-monolingual.tokenized.shuffled/*")
+        dataset = Dataset(vocab, FLAGS.datadir + "/*")
         run_train(dataset, hps, FLAGS.logdir + "/train", ps_device="/gpu:0")
     elif FLAGS.mode.startswith("eval_"):
         data_dir = FLAGS.datadir
