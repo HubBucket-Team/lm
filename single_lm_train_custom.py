@@ -20,7 +20,7 @@ def main(_):
     hps = LM.get_default_hparams().parse(FLAGS.hpconfig)
     hps.num_gpus = FLAGS.num_gpus
 
-    vocab = Vocabulary.from_file("1b_word_vocab_50k.txt")
+    vocab = Vocabulary.from_file("/deep/u/borisi/sdlg/subword-nmt/lm1b_bpe_vocab.txt")
 
     if FLAGS.mode == "train":
         hps.batch_size = 256

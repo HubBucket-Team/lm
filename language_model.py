@@ -152,7 +152,7 @@ class LM(object):
             num_delayed_steps=150,
             keep_prob=0.9,
 
-            vocab_size=50000,
+            vocab_size=10000,
             emb_size=512,
             state_size=2048,
             projected_size=512,
